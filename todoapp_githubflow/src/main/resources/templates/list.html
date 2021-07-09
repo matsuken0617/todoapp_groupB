@@ -74,11 +74,7 @@
             <td>[[${done.seq}]]</td>
             <td>[[${done.title}]]</td>
             <td>[[${done.createdAt}]]</td>
-            <td>
-                [[${done.doneAt}]]
-                <br>
-                <a th:href="@{/{mid}/todos/{seq}/cancel(mid=${member.mid},seq=${done.seq})}">キャンセル</a>
-            </td>
+            <td>[[${done.doneAt}]]</td>
         </tr>
     </table>
 
