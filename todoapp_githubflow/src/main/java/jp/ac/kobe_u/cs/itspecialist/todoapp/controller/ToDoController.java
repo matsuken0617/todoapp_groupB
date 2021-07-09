@@ -19,6 +19,8 @@ import jp.ac.kobe_u.cs.itspecialist.todoapp.entity.ToDo;
 import jp.ac.kobe_u.cs.itspecialist.todoapp.service.MemberService;
 import jp.ac.kobe_u.cs.itspecialist.todoapp.service.ToDoService;
 
+import org.springframework.web.bind.annotation.*;
+
 @Controller
 public class ToDoController {
     @Autowired
@@ -110,7 +112,8 @@ public class ToDoController {
      * @return
      */
     @PostMapping("/{mid}/todos/{seq}/background")
-    String updateBackground(@PathVariable String mid, @PathVariable Long seq, @Validated @ModelAttribute(name = "ToDoForm") ToDoForm form,Model model){
+    String updateBackground(@PathVariable String mid, @PathVariable Long seq,
+                            @Validated @ModelAttribute(name="ToDoForm") ToDoForm form, Model model) {
         tService.updateBackground(mid, seq, form.getBackground());
         return "redirect:/" + mid + "/todos";
     }

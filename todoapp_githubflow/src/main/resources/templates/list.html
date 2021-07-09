@@ -25,7 +25,7 @@
             <td>[[${todo.title}]]</td>
             <td>[[${todo.createdAt}]]</td>
             <td>
-                <form th:object="${ToDoForm}" th:action="@{/{mid}/todos/{seq}/background(mid=${member.mid},seq=${todo.seq})}" th:method="put">
+                <form th:object="${ToDoForm}" th:action="@{/{mid}/todos/{seq}/background(mid=${member.mid},seq=${todo.seq})}" th:method="post">
                     <input type="hidden" name="title" th:value="${todo.title}"/>
                     <input type="color" name="background" th:value="${todo.background}" />
                     <input type="submit" value="更新" />
