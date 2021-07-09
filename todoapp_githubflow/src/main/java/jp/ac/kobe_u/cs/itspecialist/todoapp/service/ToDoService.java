@@ -128,6 +128,23 @@ public class ToDoService {
         tRepo.deleteById(seq);
     }
 
+    /**
+     * ToDoの背景色を変更する
+     * @param mid
+     * @param seq
+     * @param colorCode
+     * @return
+     */
+    public ToDo updateBackground(String mid, Long seq, String background){
+        ToDo todo = getToDo(seq);
+        
+        if(!mid.equals(todo.getMid())){
+            throw new ToDoAppException(ToDoAppException.INVALID_TODO_OPERATION, mid 
+            + ": Cannot delete other's todo of " + todo.getMid());
+        }
 
-
+        todo.setBackground(background);
+        return tRepo.save(todo);
+    }
 }
+

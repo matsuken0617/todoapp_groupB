@@ -100,4 +100,18 @@ public class ToDoController {
         tService.done(mid, seq);
         return "redirect:/" + mid + "/todos";
     }
+
+    /**
+     * 背景色の変更
+     * @param mid
+     * @param seq
+     * @param form
+     * @param model
+     * @return
+     */
+    @PostMapping("/{mid}/todos/{seq}/background")
+    String updateBackground(@PathVariable String mid, @PathVariable Long seq, @Validated @ModelAttribute(name = "ToDoForm") ToDoForm form,Model model){
+        tService.updateBackground(mid, seq, form.getBackground());
+        return "redirect:/" + mid + "/todos";
+    }
 }
