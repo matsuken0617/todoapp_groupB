@@ -46,9 +46,9 @@
     <table border="1">
         <tr>
             <th>#<a th:href="@{/{mid}/todos/sort/done-seq(mid=${member.mid})}">昇順</a><a th:href="@{/{mid}/todos/reverse-sort/done-seq(mid=${member.mid})}">降順</a></th>
-            <th>タイトル<a>ソート</a></th>
-            <th>作成日時<a>ソート</a></th>
-            <th>完了日時<a>ソート</a></th>
+            <th>タイトル<a th:href="@{/{mid}/todos/sort/done-title(mid=${member.mid})}">昇順</a><a th:href="@{/{mid}/todos/reverse-sort/done-title(mid=${member.mid})}">降順</a></th>
+            <th>作成日時<a th:href="@{/{mid}/todos/sort/done-date(mid=${member.mid})}">昇順</a><a th:href="@{/{mid}/todos/reverse-sort/done-date(mid=${member.mid})}">降順</a></th>
+            <th>完了日時<a th:href="@{/{mid}/todos/sort/done(mid=${member.mid})}">昇順</a><a th:href="@{/{mid}/todos/reverse-sort/done(mid=${member.mid})}">降順</a></th>
         </tr>
         <tr th:each="done: ${dones}">
             <td>[[${done.seq}]]</td>
