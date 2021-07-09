@@ -1,4 +1,4 @@
-package jp.ac.kobe_u.cs;
+package jp.ac.kobe_u.cs.itspecialist.todoapp;
 
 import java.util.List;
 
