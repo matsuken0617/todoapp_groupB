@@ -15,9 +15,9 @@
     <h2>ToDo</h2>
     <table border="1">
         <tr>
-            <th>#</th>
-            <th>タイトル</th>
-            <th>作成日時</th>
+            <th>#<a th:href="@{/{mid}/todos/sort/seq(mid=${member.mid})}">昇順</a><a th:href="@{/{mid}/todos/reverse-sort/seq(mid=${member.mid})}">降順</a></th>
+            <th>タイトル<a th:href="@{/{mid}/todos/sort/title(mid=${member.mid})}">昇順</a><a th:href="@{/{mid}/todos/reverse-sort/title(mid=${member.mid})}">降順</a></th>
+            <th>作成日時<a th:href="@{/{mid}/todos/sort/date(mid=${member.mid})}">昇順</a><a th:href="@{/{mid}/todos/reverse-sort/date(mid=${member.mid})}">降順</a></th>
             <th>コマンド</th>
         </tr>
         <tr th:each="todo: ${todos}">
@@ -45,10 +45,10 @@
     <h2>Done</h2>
     <table border="1">
         <tr>
-            <th>#</th>
-            <th>タイトル</th>
-            <th>作成日時</th>
-            <th>完了日時</th>
+            <th>#<a th:href="@{/{mid}/todos/sort/done-seq(mid=${member.mid})}">昇順</a><a th:href="@{/{mid}/todos/reverse-sort/done-seq(mid=${member.mid})}">降順</a></th>
+            <th>タイトル<a>ソート</a></th>
+            <th>作成日時<a>ソート</a></th>
+            <th>完了日時<a>ソート</a></th>
         </tr>
         <tr th:each="done: ${dones}">
             <td>[[${done.seq}]]</td>
